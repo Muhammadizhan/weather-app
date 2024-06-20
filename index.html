@@ -7,15 +7,23 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="weather-app">
       <h1>Weather App</h1>
-      <input type="text" id="cityInput" placeholder="Enter city name" />
-      <button id="searchBtn">Search</button>
+      <div class="search-container">
+        <input type="text" id="cityInput" placeholder="Enter city name" />
+        <button id="searchBtn">Search</button>
+      </div>
       <div id="weatherInfo" class="hidden">
         <h2 id="cityName"></h2>
-        <img id="weatherIcon" alt="Weather Icon" />
-        <p id="temperature"></p>
-        <p id="weather"></p>
+        <div class="weather-details">
+          <img src="" alt="Weather Icon" id="weatherIcon" />
+          <p id="temperature"></p>
+          <p id="weatherDescription"></p>
+        </div>
+        <div class="temperature-range">
+          <p><span>High:</span> <span id="highTemp"></span>°C</p>
+          <p><span>Low:</span> <span id="lowTemp"></span>°C</p>
+        </div>
       </div>
     </div>
     <script src="app.js"></script>
