@@ -1,4 +1,4 @@
-const apiKey = "3beccae796b7b99ee1f5c4a788c99cea"; // Replace with your OpenWeatherMap API key
+const apiKey = "fc1c635862ddb645812c2dd7397cb3e5"; // Replace with your OpenWeatherMap API key
 const searchBtn = document.getElementById("searchBtn");
 const cityInput = document.getElementById("cityInput");
 const weatherInfo = document.getElementById("weatherInfo");
@@ -21,12 +21,14 @@ async function fetchWeather(city) {
   try {
     const response = await fetch(url);
     const data = await response.json();
+    console.log(data); // Log the response to see what you get
     if (data.cod === 200) {
       displayWeather(data);
     } else {
       alert("City not found");
     }
   } catch (error) {
+    console.error("Error fetching weather data:", error);
     alert("Error fetching weather data");
   }
 }
